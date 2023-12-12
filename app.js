@@ -5,6 +5,7 @@ require('dotenv').config()
 const errorHandler = require('./middleware/errorHandler')
 const notFoundHandler = require('./middleware/notFound')
 const connectDB = require('./database/connect')
+const productsRoutes = require('./routes/productsRoute')
 const express = require('express')
 const app = express()
 
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 // TODO: products route
+app.use('/api/v1/products', productsRoutes)
 
 // * error middlwares
 app.use(notFoundHandler)
