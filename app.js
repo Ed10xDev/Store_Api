@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('express-async-errors')
 
 // TODO: async errors
 
@@ -6,6 +7,7 @@ const errorHandler = require('./middleware/errorHandler')
 const notFoundHandler = require('./middleware/notFound')
 const connectDB = require('./database/connect')
 const productsRoutes = require('./routes/productsRoute')
+
 const express = require('express')
 const app = express()
 

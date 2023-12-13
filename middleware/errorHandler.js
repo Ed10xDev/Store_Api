@@ -4,6 +4,7 @@ const errorHandler = (err, req, res, next) => {
     if (err instanceof CustomError) {
         return res.status(err.status).json({ msg: err.message })
     }
+    console.log(err)
     res.status(500).json({ msg: 'Something went wrong please try again later' })
 }
 
